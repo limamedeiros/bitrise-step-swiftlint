@@ -68,6 +68,15 @@ inputs:
       - sonarqube
       - markdown
 
+  - reporter_path: $BITRISE_DEPLOY_DIR
+    opts:
+      category: Config
+      title: "Output directory path"
+      summary: ""
+      description: |-
+        This directory will contain the generated output.
+      is_required: true
+
   - strict: "no"
     opts:
       category: Config
@@ -80,3 +89,8 @@ inputs:
       - "yes"
       - "no"
 outputs:
+  - SWIFTLINT_REPORT_FILE:
+      opts:
+        title: Report file
+        description: |
+          Path to a file that contains all found violations.
